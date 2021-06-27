@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <b-container fluid class="scollbar">
     <b-row>
-      <b-col class="first-column" style="background-color: blue">
+      <b-col class="first-column">
         <b-input
           v-model="input"
           type="number"
@@ -10,7 +10,7 @@
           @keyup="filterInput()"
         ></b-input>
       </b-col>
-      <b-col style="background-color: red">
+      <b-col>
         <b-form-select v-model="selected" @change="selectMethod()" class="mb-3">
           <b-form-select-option :value="null"> Select </b-form-select-option>
           <b-form-select-option :value="true"> isPrime </b-form-select-option>
@@ -19,11 +19,11 @@
           </b-form-select-option>
         </b-form-select>
       </b-col>
-      <b-col class="last-column" style="background-color: green">
+      <b-col class="last-column">
         {{ result }}
       </b-col>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script>
@@ -90,5 +90,11 @@ export default {
 }
 .last-column {
   max-width: 300px !important;
+}
+@media (max-width: 600px) {
+  .scollbar {
+    width: 600px !important;
+    overflow-x: auto;
+  }
 }
 </style>
