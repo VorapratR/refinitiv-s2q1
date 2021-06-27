@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-row>
-      <b-col class="first-column">
+      <b-col class="first-column" style="background-color: blue">
         <b-input
           v-model="input"
           type="number"
@@ -10,7 +10,7 @@
           @keyup="filterInput()"
         ></b-input>
       </b-col>
-      <b-col>
+      <b-col style="background-color: red">
         <b-form-select v-model="selected" @change="selectMethod()" class="mb-3">
           <b-form-select-option :value="null"> Select </b-form-select-option>
           <b-form-select-option :value="true"> isPrime </b-form-select-option>
@@ -19,7 +19,7 @@
           </b-form-select-option>
         </b-form-select>
       </b-col>
-      <b-col class="last-column">
+      <b-col class="last-column" style="background-color: green">
         {{ result }}
       </b-col>
     </b-row>
@@ -86,9 +86,9 @@ export default {
 
 <style>
 .first-column {
-  width: 200px !important;
+  max-width: 200px !important;
 }
 .last-column {
-  width: 300px !important;
+  max-width: 300px !important;
 }
 </style>
